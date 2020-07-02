@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Comment do
   context 'Comment Validation' do 
     it "comment is valid" do 
-      expect(Comment.create(content: "hello")).to be_valid
+      expect(Comment.create(content: "hello", user_id: User.first.id, post_id: Post.first.id)).to be_valid
     end
 
     it "invalid with no content" do 
