@@ -10,7 +10,7 @@ TAGS = ["adventurous", "aggressive", "agreeable", "alert", "alive", "amused", "a
 
 TAGS.each{|tag| Tag.create(:name  => tag)}
 
-crookshanks = User.create(:name => "Crookshanks")
+crookshanks = User.create!(:name => "Crookshanks")
 
 baby_cat = User.create(:name => "Baby Cat")
 
@@ -20,4 +20,4 @@ kitten_post = Post.create(:user_id => crookshanks.id, :name => "Kittens!", :cont
 
 PostTag.create(:tag_id => adorable.id, :post_id => kitten_post.id)
 
-baby_cat_comment = Comment.create(:user_id => baby_cat.id, :post_id => kitten_post.id, :content => "Meow!")
+baby_cat_comment = Comment.create!(:user_id => baby_cat.id, :post_id => kitten_post.id, :content => "Meow!")
